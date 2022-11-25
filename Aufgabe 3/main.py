@@ -23,11 +23,29 @@ print(tabulate(data, headers=data.columns))
 # print(data.values[0, 3:])
 
 # print(data)
-plt.scatter(range(2000, 2023), data.values[0, 3:], marker="*")
+# plt.scatter(range(2000, 2023), data.values[0, 3:], marker="*")
+# # plt.show()
+
+# my_bez = data.loc[data['Bez'] == "KU"]
+# print(my_bez.sum())
+
+# plt.scatter(range(2000, 2023), my_bez.values[0, 3:])
+
+min_data = []
+max_data = []
+avg_data = []
+
+for x in range(0, len(data)):
+    values = data.values[x, 3:]
+    min_data.append(values.min())
+    max_data.append(values.max())
+    avg_data.append(values.mean())
+
+
+
+print(data)
+
+
 # plt.show()
 
-my_bez = data.loc[data['Bez'] == "KU"]
-print(my_bez.sum())
 
-plt.scatter(range(2000, 2023), my_bez.values[0, 3:])
-plt.show()
