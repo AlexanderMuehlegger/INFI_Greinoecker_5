@@ -25,7 +25,7 @@ def getPred(df, df_pred):
     return predictions
 
 def getModel(y, v):
-    df_reg=plt.DataFrame({"years": y, "bev":v})
+    df_reg=pd.DataFrame({"years": y, "bev":v})
     model =  sm.OLS.from_formula('bev ~ years', df_reg).fit()
     return model
 
